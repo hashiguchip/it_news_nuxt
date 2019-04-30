@@ -1,63 +1,39 @@
-import parseArgs from "minimist";
-
-const argv = parseArgs(process.argv.slice(2), {
-  alias: {
-    H: "hostname",
-    p: "port"
-  },
-  string: ["H"],
-  unknown: parameter => false
-});
-
-const port =
-  argv.port ||
-  process.env.PORT ||
-  process.env.npm_package_config_nuxt_port ||
-  "3000";
-const host =
-  argv.hostname ||
-  process.env.HOST ||
-  process.env.npm_package_config_nuxt_host ||
-  "localhost";
+import pkg from "./package";
 
 export default {
-  env: {
-    baseUrl: process.env.BASE_URL || `http://${host}:${port}`
-  },
-  head: {
-    title: "tt1",
-    meta: [
-      { charset: "utf-8" },
-      {
-        name: "viewport",
-        content: "width=device-width, initial-scale=1"
-      },
-      {
-        hid: "description",
-        name: "description",
-        content: "Nuxt.js project"
-      }
-    ],
-    link: [
-      {
-        rel: "icon",
-        type: "image/x-icon",
-        href: "/favicon.ico"
-      }
-    ]
-  },
+  mode: "universal",
+
+  /*
+   ** Headers of the page
+   */
+
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: "#3B8070" },
+  loading: { color: "#fff" },
+
+  /*
+   ** Global CSS
+   */
+  css: ["normalize.css/normalize.css", "~/assets/css/main.css"],
+
+  /*
+   ** Plugins to load before mounting the App
+   */
+  plugins: [],
+
+  /*
+   ** Nuxt.js modules
+   */
+  modules: ["@nuxtjs/axios"],
+
   /*
    ** Build configuration
    */
-  css: [
-      'normalize.css/normalize.css',
-      "~/assets/css/main.css"
-  ],
-  build: {},
-  modules: ["@nuxtjs/axios", "~/modules/typescript.js"],
-  axios: {}
+  build: {
+    /*
+     ** You can extend webpack config here
+     */
+    extend(config, ctx) {}
+  }
 };

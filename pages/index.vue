@@ -8,8 +8,8 @@
             .panel__favorite(:class="favorite")
 </template>
 <script lang="ts">
-import { Vue } from "nuxt-property-decorator";
-import { Component } from "~/node_modules/nuxt-property-decorator";
+import { Component, Vue } from "~/node_modules/vue-property-decorator";
+
 @Component
 export default class extends Vue {
   /**
