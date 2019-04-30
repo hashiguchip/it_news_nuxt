@@ -18,22 +18,11 @@ export default class extends Vue {
   public layout() {
     return "default";
   }
-  public items = [
-    {
-      id: 1,
-      name: "CNET",
-      category: [1],
-      url: "https://japan.cnet.com/",
-      favorite: false
-    },
-    {
-      id: 2,
-      name: "ZDNet",
-      category: [1],
-      url: "https://japan.zdnet.com/",
-      favorite: false
-    }
-  ];
+  public items = [];
+  public async mounted() {
+    const url = "http://localhost:3333/sites";
+    this.items = await this.$axios.$get(url);
+  }
 }
 </script>
 
@@ -49,7 +38,7 @@ export default class extends Vue {
     grid-row-gap: 10px
     justify-items: stretch
     align-items: stretch
-    height: 400px
+    height: 1000px
     &__panel
         width: 100%
         height: 100%
