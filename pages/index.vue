@@ -1,20 +1,8 @@
 <template lang="pug">
 .main-contents
     .main-contents__panels.panels-block
-        .panels-block__panel.panel
-            .panel__text aaaaaaaaa
-        .panels-block__panel.panel
-            .panel__text aaaaaaaaa
-        .panels-block__panel.panel
-            .panel__text aaaaaaaaa
-        .panels-block__panel.panel
-            .panel__text aaaaaaaaa
-        .panels-block__panel.panel
-            .panel__text aaaaaaaaa
-        .panels-block__panel.panel
-            .panel__text aaaaaaaaa
-        .panels-block__panel.panel
-            .panel__text aaaaaaaaa
+        a.panels-block__panel.panel(:href="item.url" target="_blank" v-for="item in items")
+            .panel__text {{item.name}}
 </template>
 <script lang="ts">
 import { Vue } from "nuxt-property-decorator";
@@ -27,6 +15,22 @@ export default class extends Vue {
   public layout() {
     return "default";
   }
+  public items = [
+    {
+      id: 1,
+      name: "CNET",
+      category: [1],
+      url: "https://japan.cnet.com/",
+      favorite: false
+    },
+    {
+      id: 2,
+      name: "ZDNet",
+      category: [1],
+      url: "https://japan.zdnet.com/",
+      favorite: false
+    }
+  ];
 }
 </script>
 
