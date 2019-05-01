@@ -1,7 +1,14 @@
 <template lang="pug">
 .main-contents
-    .about
-        .about__text aaaaaaaaaaaaaaa
+    article.main-contents__article.article
+        .article__head これは見出しです！！！！
+        p.article__p あああああああああああああ
+        .article__head これは見出しです！！！！
+        p.article__p あああああああああああああ
+        p.article__p あああああああああああああ
+        p.article__p あああああああああああああ
+        p.article__p あああああああああああああ
+        p.article__p あああああああああああああ
 </template>
 <script lang="ts">
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
@@ -25,4 +32,10 @@ export default class extends Vue {
 .about
     &__text
         background-color: orange
+.article
+    margin: 60px 0
+    &__head
+        font-size: 24px
+        font-weight: bold
+    &__p
 </style>
