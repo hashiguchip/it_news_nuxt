@@ -15,7 +15,11 @@ export default {
   /*
    ** Global CSS
    */
-  css: ["normalize.css/normalize.css", "~/assets/css/main.css"],
+  css: [
+    "normalize.css/normalize.css",
+    "~/assets/css/reset.css",
+    "~/assets/css/main.css"
+  ],
 
   /*
    ** Plugins to load before mounting the App

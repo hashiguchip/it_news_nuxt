@@ -34,7 +34,7 @@ export default class extends Vue {
 <style scoped lang="sass">
 .main-contents
     margin: 10px 0px
-    background-color: indianred
+    background-color: #bbcdbb
 .panels-block
     display: grid
     grid-template-columns: 1fr 1fr 1fr 1fr
@@ -51,13 +51,21 @@ export default class extends Vue {
     position: relative
     width: 100%
     height: 100%
-    background-color: #3B8070
+    border-radius: 6px
     &__text
+        z-index: 100
         position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%,-50%)
+        display: flex
+        align-items: center
+        justify-content: center
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: rgba(#000000,0.7)
+        border-radius: 6px
         font-size: 18px
+        color: #d8dce0
     &__image
         z-index: -100
         position: absolute
@@ -65,9 +73,8 @@ export default class extends Vue {
         left: 0
         width: 100%
         height: 100%
-        background: indianred
-        font-size: 24px
     &__favorite
+        z-index: 100
         position: absolute
         top: 5px
         right: 5px
@@ -75,7 +82,7 @@ export default class extends Vue {
         height: 30px
 .favorite-icon
     &__off
-        background: url("~@/assets/images/heart_off.svg") center
+        background: url("~@/assets/images/heart_off.svg") no-repeat
         background-size: cover
     &__on
         background: url("~@/assets/images/heart_on.svg") no-repeat

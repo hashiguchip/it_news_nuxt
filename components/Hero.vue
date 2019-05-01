@@ -29,6 +29,8 @@ export default class extends Vue {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #f5f5f5;
+    font-size: 24px;
+    text-shadow: 0 2px 7px #000000;
   }
 }
 </style>
