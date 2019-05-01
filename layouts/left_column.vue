@@ -1,10 +1,6 @@
 <template lang="pug">
   .page-wrapper
-    .page-wrapper__header.header-block
-      nuxt-link.header-block__title(to="/") たいとる
-      .header-block__subtitle たいとおお
-      .header-block__menus
-        nuxt-link.header-block__about(to="about") About
+    Header.page-wrapper__header
     Hero
     .page-wrapper__main
       nuxt
@@ -76,22 +72,6 @@
     align-items: center;
     justify-content: center;
     &__text {
-    }
-  }
-  .page-hero {
-    position: relative;
-    height: 300px;
-    &__img {
-      width: 100%;
-      height: 100%;
-      background-color: red;
-    }
-    &__text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #f5f5f5;
     }
   }
 </style>

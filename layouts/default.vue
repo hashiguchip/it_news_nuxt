@@ -1,10 +1,6 @@
 <template lang="pug">
 .page-wrapper
-    .page-wrapper__header.header-block
-        nuxt-link.header-block__title(to="/") たいとる
-        .header-block__subtitle たいとおお
-        .header-block__menus
-            nuxt-link.header-block__about(to="about") About
+    Header.page-wrapper__header.
     Hero
     .page-wrapper__main
         nuxt
@@ -15,10 +11,11 @@
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
 import { namespace } from "vuex-class";
 import Hero from "~/components/Hero.vue";
+import Header from "~/components/Header.vue";
 
 // const People = namespace(main.name);
 
-@Component({ components: { Hero } })
+@Component({ components: { Hero, Header } })
 export default class extends Vue {
   // @People.State selected;
   /**
@@ -50,26 +47,6 @@ export default class extends Vue {
   &__footer {
     height: 170px;
     background: #1a5220;
-  }
-}
-.header-block {
-  position: relative;
-  padding: 0 10px;
-  &__title {
-    padding-top: 10px;
-    font-size: 24px;
-  }
-  &__subtitle {
-    font-size: 14px;
-  }
-  &__menus {
-    position: absolute;
-    font-size: 14px;
-    top: calc(50% - 7px);
-    right: 50px;
-  }
-  &__about {
-    font-size: 14px;
   }
 }
 .footer-block {
