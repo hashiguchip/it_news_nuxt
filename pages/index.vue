@@ -6,8 +6,8 @@
             img.panel__image(:src="item.image")
             //todo:favorite ハート
             .panel__favorite(
-                @click="toggleFavorite"
-                :class="favoriteIcon"
+                @click="toggleFavorite(item)"
+                :class="{ 'favorite-icon__on': item.favorite, 'favorite-icon__off': !item.favorite }"
             )
 </template>
 <script lang="ts">
@@ -15,18 +15,18 @@ import { Component, Vue } from "~/node_modules/vue-property-decorator";
 
 @Component
 export default class extends Vue {
-  public items = [];
-  public favoriteStatus = true;
   public async mounted() {
     const url = "http://localhost:3333/sites";
-    this.items = await this.$axios.$get(url);
+    const sites = await this.$axios.$get(url);
     this.$store.dispatch("main/changePageName", "ホーム");
+    this.$store.dispatch("sites/fetchSites", sites);
   }
-  public get favoriteIcon() {
-    return this.favoriteStatus ? "favorite-icon__on" : "favorite-icon__off";
+  // 一覧取得
+  public get items(): string {
+    return this.$store.state.sites.sites;
   }
-  public toggleFavorite(): void {
-    this.favoriteStatus = !this.favoriteStatus;
+  public toggleFavorite(site): void {//todo 型とか
+    this.$store.dispatch("sites/favorite", site);
   }
 }
 </script>
