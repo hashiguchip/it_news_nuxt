@@ -12,14 +12,14 @@
 </template>
 <script lang="ts">
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
-@Component
+@Component({
+  layout: "left_column"
+})
 export default class extends Vue {
   /**
    * レイアウト
    */
-  public layout() {
-    return "default";
-  }
+  layout: string = "left_column";
   public mounted() {
     this.$store.dispatch("main/changePageName", "このサイトについて");
   }
