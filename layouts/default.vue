@@ -5,9 +5,7 @@
         .header-block__subtitle たいとおお
         .header-block__menus
             nuxt-link.header-block__about(to="about") About
-    .page-hero
-        img.page-hero__img(src="~/assets/images/test.jpg")
-        .page-hero__text {{pageName}}
+    Hero
     .page-wrapper__main
         nuxt
     .page-wrapper__footer.footer-block
@@ -16,10 +14,11 @@
 <script lang="ts">
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
 import { namespace } from "vuex-class";
+import Hero from "~/components/Hero.vue";
 
 // const People = namespace(main.name);
 
-@Component
+@Component({ components: { Hero } })
 export default class extends Vue {
   // @People.State selected;
   /**
@@ -32,9 +31,6 @@ export default class extends Vue {
   public async mounted() {
     const url = "http://localhost:3333/sites";
     this.items = await this.$axios.$get(url);
-  }
-  public get pageName(): string {
-    return this.$store.state.main.pageName;
   }
 }
 </script>
@@ -81,22 +77,6 @@ export default class extends Vue {
   align-items: center;
   justify-content: center;
   &__text {
-  }
-}
-.page-hero {
-  position: relative;
-  height: 300px;
-  &__img {
-    width: 100%;
-    height: 100%;
-    background-color: red;
-  }
-  &__text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #f5f5f5;
   }
 }
 </style>
