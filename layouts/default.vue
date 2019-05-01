@@ -2,6 +2,7 @@
 .page-wrapper
     Header.page-wrapper__header.
     Hero
+    Menu
     .page-wrapper__main
         nuxt
     .page-wrapper__footer.footer-block
@@ -12,10 +13,11 @@ import { Component, Vue } from "~/node_modules/vue-property-decorator";
 import { namespace } from "vuex-class";
 import Hero from "~/components/Hero.vue";
 import Header from "~/components/Header.vue";
+import Menu from "~/components/Menu.vue";
 
 // const People = namespace(main.name);
 
-@Component({ components: { Hero, Header } })
+@Component({ components: { Hero, Header, Menu } })
 export default class extends Vue {
   // @People.State selected;
   /**

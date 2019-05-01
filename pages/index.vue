@@ -25,7 +25,8 @@ export default class extends Vue {
   public get items(): string {
     return this.$store.state.sites.sites;
   }
-  public toggleFavorite(site): void {//todo 型とか
+  public toggleFavorite(site): void {
+    //todo 型とか
     this.$store.dispatch("sites/favorite", site);
   }
 }
