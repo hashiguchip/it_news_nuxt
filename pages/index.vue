@@ -22,6 +22,7 @@ export default class extends Vue {
   public async mounted() {
     const url = "http://localhost:3333/sites";
     this.items = await this.$axios.$get(url);
+    this.$store.dispatch("main/changePageName", "ホーム");
   }
 }
 </script>
@@ -52,7 +53,7 @@ export default class extends Vue {
         top: 50%
         left: 50%
         transform: translate(-50%,-50%)
-        font-size: 24px
+        font-size: 18px
     &__image
         z-index: -100
         position: absolute

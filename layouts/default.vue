@@ -7,12 +7,37 @@
             nuxt-link.header-block__about(to="about") About
     .page-hero
         img.page-hero__img(src="~/assets/images/test.jpg")
-        .page-hero__text hhhhhhhhhhhh
+        .page-hero__text {{pageName}}
     .page-wrapper__main
         nuxt
     .page-wrapper__footer.footer-block
         .footer-block__text aaaaaaaa
 </template>
+<script lang="ts">
+import { Component, Vue } from "~/node_modules/vue-property-decorator";
+import { namespace } from "vuex-class";
+
+// const People = namespace(main.name);
+
+@Component
+export default class extends Vue {
+  // @People.State selected;
+  /**
+   * レイアウト
+   */
+  public layout() {
+    return "default";
+  }
+  public items = [];
+  public async mounted() {
+    const url = "http://localhost:3333/sites";
+    this.items = await this.$axios.$get(url);
+  }
+  public get pageName(): string {
+    return this.$store.state.main.pageName;
+  }
+}
+</script>
 <style scoped lang="scss">
 .page-wrapper {
   width: 100%;

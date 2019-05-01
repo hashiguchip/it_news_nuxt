@@ -13,6 +13,9 @@ export default class extends Vue {
   public layout() {
     return "default";
   }
+  public mounted() {
+    this.$store.dispatch("main/changePageName", "このサイトについて");
+  }
 }
 </script>
 
