@@ -1,28 +1,32 @@
 <template lang="pug">
 .main-contents
     .main-contents__panels.panels-block
-        a.panels-block__panel.panel(:href="item.url" target="_blank" v-for="item in items")
-            .panel__text {{item.name}}
+        .panels-block__panel.panel(v-for="item in items")
+            a.panel__text(:href="item.url" target="_blank") {{item.name}}
             img.panel__image(:src="item.image")
             //todo:favorite ハート
-            .panel__favorite(:class="favorite")
+            .panel__favorite(
+                @click="toggleFavorite"
+                :class="favoriteIcon"
+            )
 </template>
 <script lang="ts">
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
 
 @Component
 export default class extends Vue {
-  /**
-   * レイアウト
-   */
-  public layout() {
-    return "default";
-  }
   public items = [];
+  public favoriteStatus = true;
   public async mounted() {
     const url = "http://localhost:3333/sites";
     this.items = await this.$axios.$get(url);
     this.$store.dispatch("main/changePageName", "ホーム");
+  }
+  public get favoriteIcon() {
+    return this.favoriteStatus ? "favorite-icon__on" : "favorite-icon__off";
+  }
+  public toggleFavorite(): void {
+    this.favoriteStatus = !this.favoriteStatus;
   }
 }
 </script>
@@ -65,9 +69,15 @@ export default class extends Vue {
         font-size: 24px
     &__favorite
         position: absolute
-        top: 20px
-        right: 20px
-        width: 50px
-        height: 50px
-        background: #cd1514
+        top: 5px
+        right: 5px
+        width: 30px
+        height: 30px
+.favorite-icon
+    &__off
+        background: url("~@/assets/images/heart_off.svg") center
+        background-size: cover
+    &__on
+        background: url("~@/assets/images/heart_on.svg") no-repeat
+        background-size: cover
 </style>
