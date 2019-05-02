@@ -2,7 +2,7 @@
 .menus
     .menus__item.menu
         img.menu__image(src="https://placehold.jp/150x150.png")
-        nuxt-link.menu__text(to="about") ガジェット
+        nuxt-link.menu__text(to="favorite") favorite
     .menus__item.menu
         img.menu__image(src="https://placehold.jp/150x150.png")
         nuxt-link.menu__text(to="about") ガジェット

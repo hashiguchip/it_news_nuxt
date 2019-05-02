@@ -16,7 +16,9 @@ import Header from "~/components/Header.vue";
 
 // const People = namespace(main.name);
 
-@Component({ components: { Hero, Header } })
+@Component({
+  components: { Hero, Header }
+})
 export default class extends Vue {
   public items = [];
   public async mounted() {

@@ -13,13 +13,17 @@
 <script lang="ts">
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
 @Component({
-  layout: "left_column"
+  layout: "left_column",
+  transition: (to, from) => {
+    return "page";
+  }
 })
 export default class extends Vue {
   /**
    * レイアウト
    */
   layout: string = "left_column";
+
   public mounted() {
     this.$store.dispatch("main/changePageName", "このサイトについて");
   }
@@ -38,4 +42,10 @@ export default class extends Vue {
         font-size: 24px
         font-weight: bold
     &__p
+.page-enter-active,
+.page-leave-active
+    transition: opacity .3s ease
+.page-enter,
+.page-leave-to
+    transition: opacity .3s ease
 </style>
