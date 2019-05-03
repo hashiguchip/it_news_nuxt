@@ -6,6 +6,7 @@
 </template>
 <script lang="ts">
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
+import { getPageData } from "~/store/main";
 @Component({
   layout: "left_column",
   transition: (to, from) => {
@@ -19,7 +20,7 @@ export default class extends Vue {
   layout: string = "left_column";
 
   public mounted() {
-    this.$store.dispatch("main/changePageName", "このサイトについて");
+    this.$store.dispatch("main/changePage", getPageData("about"));
   }
 
   /**

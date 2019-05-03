@@ -12,6 +12,7 @@
 </template>
 <script lang="ts">
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
+import { getPageData } from "~/store/main";
 
 @Component({
   transition: (to, from) => {
@@ -20,7 +21,7 @@ import { Component, Vue } from "~/node_modules/vue-property-decorator";
 })
 export default class extends Vue {
   public async mounted() {
-    this.$store.dispatch("main/changePageName", "お気に入り");
+    this.$store.dispatch("main/changePage", getPageData("favorite"));
   }
   // 一覧取得
   public get items(): string {

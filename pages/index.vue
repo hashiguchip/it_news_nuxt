@@ -12,6 +12,7 @@
 </template>
 <script lang="ts">
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
+import { getPageData } from "~/store/main";
 
 @Component({
   transition: (to, from) => {
@@ -22,7 +23,7 @@ export default class extends Vue {
   public async mounted() {
     const url = "http://localhost:3333/sites";
     const sites = await this.$axios.$get(url);
-    this.$store.dispatch("main/changePageName", "ホーム");
+    this.$store.dispatch("main/changePage", getPageData("/"));
     this.$store.dispatch("sites/fetchSites", sites);
   }
   // 一覧取得
