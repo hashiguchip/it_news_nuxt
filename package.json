@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "mock_server": "json-server --watch /backgroundAPIs/db.js --port 3333",
+    "mock_server": "json-server --watch backgroundAPIs/API.js --port 3333",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
