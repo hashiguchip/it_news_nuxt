@@ -21,7 +21,7 @@ import { getPageData } from "~/store/main";
 })
 export default class extends Vue {
   public async mounted() {
-    this.$store.dispatch("main/changePage", getPageData("favorite"));
+    this.$store.dispatch("main/changePage", getPageData("news"));
   }
   // 一覧取得
   public get items(): any {
