@@ -2,31 +2,31 @@
   "category": [
     {
       "id": 1,
-      "title": "NEWS",
+      "name": "NEWS",
       "description": "IT業界のNEWS一覧",
       "image": "path"
     },
     {
       "id": 1,
-      "title": "Programing",
+      "name": "Programing",
       "description": "プログラミング",
       "image": "path"
     },
     {
       "id": 1,
-      "title": "Gadget",
+      "name": "Gadget",
       "description": "ガジェット",
       "image": "path"
     },
     {
       "id": 1,
-      "title": "Blog",
+      "name": "Blog",
       "description": "IT関係ブログ",
       "image": "path"
     },
     {
       "id": 1,
-      "title": "Joke",
+      "name": "Joke",
       "description": "ネタ",
       "image": "path"
     }

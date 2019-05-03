@@ -1,17 +1,8 @@
 <template lang="pug">
 .menus
-    .menus__item.menu
+    .menus__item.menu(v-for="category in categories")
         img.menu__image(src="https://placehold.jp/150x150.png")
-        nuxt-link.menu__text(to="favorite") favorite
-    .menus__item.menu
-        img.menu__image(src="https://placehold.jp/150x150.png")
-        nuxt-link.menu__text(to="about") ガジェット
-    .menus__item.menu
-        img.menu__image(src="https://placehold.jp/150x150.png")
-        nuxt-link.menu__text(to="about") ガジェット
-    .menus__item.menu
-        img.menu__image(src="https://placehold.jp/150x150.png")
-        nuxt-link.menu__text(to="about") ガジェット
+        nuxt-link.menu__text(to="favorite") {{category.name}}
 </template>
 
 <script lang="ts">
@@ -20,6 +11,15 @@ import { Component, Vue } from "~/node_modules/vue-property-decorator";
 @Component
 export default class extends Vue {
   public test = [];
+  public async mounted() {
+    const url = "http://localhost:3333/category";
+    const categories = await this.$axios.$get(url);
+    this.$store.dispatch("categories/fetchCategories", categories);
+  }
+  // 一覧取得
+  public get categories(): string {
+    return this.$store.state.categories.list;
+  }
 }
 </script>
 
