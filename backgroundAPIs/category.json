@@ -1,7 +1,34 @@
 {
-    "1": "IT業界ニュース",
-    "2": "programing",
-    "3": "gadget",
-    "4": "blog",
-    "5": "ネタ"
+  "category": [
+    {
+      "id": 1,
+      "title": "NEWS",
+      "description": "IT業界のNEWS一覧",
+      "image": "path"
+    },
+    {
+      "id": 1,
+      "title": "Programing",
+      "description": "プログラミング",
+      "image": "path"
+    },
+    {
+      "id": 1,
+      "title": "Gadget",
+      "description": "ガジェット",
+      "image": "path"
+    },
+    {
+      "id": 1,
+      "title": "Blog",
+      "description": "IT関係ブログ",
+      "image": "path"
+    },
+    {
+      "id": 1,
+      "title": "Joke",
+      "description": "ネタ",
+      "image": "path"
+    }
+  ]
 }
