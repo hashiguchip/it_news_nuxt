@@ -22,8 +22,8 @@ export function getPageData(pageKey): IPage {
     page.title = "News";
     page.description = "News一覧です";
   }
-  if (pageKey === "programing") {
-    page.title = "Programing";
+  if (pageKey === "programming") {
+    page.title = "Programming";
     page.description = "プログラミングブログ一覧";
   }
   if (pageKey === "gadget") {

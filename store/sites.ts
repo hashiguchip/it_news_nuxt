@@ -12,9 +12,34 @@ export const actions = {
 };
 
 export const getters = {
-  isFavorite: state => {
+  favorite: state => {
     return state.sites.filter(site => {
       return site.favorite;
+    });
+  },
+  blog: state => {
+    return state.sites.filter(site => {
+      return site.category.includes(1);
+    });
+  },
+  gadget: state => {
+    return state.sites.filter(site => {
+      return site.category.includes(1);
+    });
+  },
+  joke: state => {
+    return state.sites.filter(site => {
+      return site.category.includes(1);
+    });
+  },
+  news: state => {
+    return state.sites.filter(site => {
+      return site.category.includes(1);
+    });
+  },
+  programming: state => {
+    return state.sites.filter(site => {
+      return site.category.includes(1);
     });
   }
 };

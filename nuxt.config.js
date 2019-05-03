@@ -18,7 +18,9 @@ export default {
   css: [
     "normalize.css/normalize.css",
     "~/assets/css/reset.css",
-    "~/assets/css/main.css"
+    "~/assets/css/main.css",
+    "~/assets/css/variables/colors.sass",
+    "~/assets/css/components/main_list.sass"
   ],
 
   /*
