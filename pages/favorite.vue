@@ -13,6 +13,8 @@
 <script lang="ts">
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
 import { getPageData } from "~/store/main";
+import { Getter } from "~/node_modules/vuex-class";
+const namespace = "favorite";
 
 @Component({
   transition: (to, from) => {
@@ -24,8 +26,8 @@ export default class extends Vue {
     this.$store.dispatch("main/changePage", getPageData("favorite"));
   }
   // 一覧取得
-  public get items(): string {
-    return this.$store.state.sites.sites;
+  public get items(): any {
+    return this.$store.getters["sites/isFavorite"];
   }
   public toggleFavorite(site): void {
     //todo 型とか

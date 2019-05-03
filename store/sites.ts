@@ -11,6 +11,13 @@ export const actions = {
   }
 };
 
+export const getters = {
+  isFavorite: state => {
+    return state.sites.filter(site => {
+      return site.favorite;
+    });
+  }
+};
 export const mutations = {
   fetchSites(state, sites) {
     state.sites = sites;
