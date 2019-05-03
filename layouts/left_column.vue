@@ -5,20 +5,18 @@
     .page-wrapper__main.main
         .main__left レフトメニュー
         nuxt.main__contents
-    .page-wrapper__footer.footer-block
-        .footer-block__text bbbbbbbbbbb
+    Footer.page-wrapper__footer
 </template>
 <script lang="ts">
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
 import { namespace } from "vuex-class";
 import Hero from "~/components/Hero.vue";
 import Header from "~/components/Header.vue";
+import Footer from "~/components/Footer.vue";
 
 // const People = namespace(main.name);
 
-@Component({
-  components: { Hero, Header }
-})
+@Component({ components: { Header, Footer, Hero } })
 export default class extends Vue {
   public items = [];
   public async mounted() {
@@ -53,13 +51,6 @@ export default class extends Vue {
     margin-right: 50px;
   }
   &__contents {
-  }
-}
-.footer-block {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  &__text {
   }
 }
 </style>

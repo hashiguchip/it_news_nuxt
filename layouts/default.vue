@@ -5,8 +5,7 @@
     Menu
     .page-wrapper__main
         nuxt
-    .page-wrapper__footer.footer-block
-        .footer-block__text aaaaaaaa
+    Footer.page-wrapper__footer
 </template>
 <script lang="ts">
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
@@ -14,10 +13,11 @@ import { namespace } from "vuex-class";
 import Hero from "~/components/Hero.vue";
 import Header from "~/components/Header.vue";
 import Menu from "~/components/Menu.vue";
+import Footer from "~/components/Footer.vue";
 
 // const People = namespace(main.name);
 
-@Component({ components: { Hero, Header, Menu } })
+@Component({ components: { Header, Footer, Hero, Menu } })
 export default class extends Vue {
   // @People.State selected;
   /**
@@ -49,13 +49,6 @@ export default class extends Vue {
   &__footer {
     height: 170px;
     background: #1a5220;
-  }
-}
-.footer-block {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  &__text {
   }
 }
 </style>
