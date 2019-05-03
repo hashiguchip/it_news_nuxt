@@ -32,7 +32,11 @@ export default class extends Vue {
     });
   }
   public toggleFavorite(site): void {
-    //todo 型とか
+    if (!site.favorite) {
+      this.$store.dispatch("user/registerFavorite", site.id);
+    } else {
+      this.$store.dispatch("user/removeFavorite", site.id);
+    }
     this.$store.dispatch("sites/favorite", site);
   }
 }

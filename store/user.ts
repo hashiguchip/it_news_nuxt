@@ -4,18 +4,26 @@ export interface IUser {
 
 export const state = () => ({
   user: {
-    favorite: [1, 2]
+    favorite: []
   }
 });
 
 export const actions = {
-  // registerFavorite({ commit }, favoriteSite) {
-  //   commit("registerFavorite", favoriteSite);
-  // }
+  registerFavorite({ commit }, favoriteSiteId) {
+    commit("registerFavorite", favoriteSiteId);
+  },
+  removeFavorite({ commit }, favoriteSiteId) {
+    commit("removeFavorite", favoriteSiteId);
+  }
 };
 
 export const mutations = {
-  // registerFavorite(state, favoriteSite) {
-  //   state.user.favorite = favoriteSite;
-  // }
+  registerFavorite(state, favoriteSiteId) {
+    state.user.favorite.push(favoriteSiteId);
+  },
+  removeFavorite(state, removeFavoriteSiteId) {
+    state.user.favorite = state.user.favorite.filter(value => {
+      return value !== removeFavoriteSiteId;
+    });
+  }
 };
