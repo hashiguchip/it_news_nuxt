@@ -4,239 +4,205 @@
       "id": 1,
       "name": "CNET",
       "category": [1],
-      "url": "https://japan.cnet.com/",
-      "favorite": false
+      "url": "https://japan.cnet.com/"
     },
     {
       "id": 2,
       "name": "ZDNet",
       "category": [1],
-      "url": "https://japan.zdnet.com/",
-      "favorite": false
+      "url": "https://japan.zdnet.com/"
     },
     {
       "id": 3,
       "name": "TechRepublic Japan",
       "category": [1],
-      "url": "https://japan.techrepublic.com/",
-      "favorite": false
+      "url": "https://japan.techrepublic.com/"
     },
     {
       "id": 4,
       "name": "builder by ZDNet Japan",
       "category": [1],
-      "url": "https://builder.japan.zdnet.com/",
-      "favorite": false
+      "url": "https://builder.japan.zdnet.com/"
     },
     {
       "id": 5,
       "name": "ギズモード・ジャパン | 日本最大級のガジェット＆テクノロジーサイト",
       "category": [1],
-      "url": "https://www.gizmodo.jp/",
-      "favorite": false
+      "url": "https://www.gizmodo.jp/"
     },
     {
       "id": 6,
       "name": "GIGAZINE（ギガジン）",
       "category": [1],
-      "url": "http://gigazine.net/",
-      "favorite": false
+      "url": "http://gigazine.net/"
     },
     {
       "id": 7,
       "name": "TechCrunch Japan - 最新のテクノロジーとスタートアップ・Webに関するニュースを配信するブログメディア",
       "category": [1],
-      "url": "https://jp.techcrunch.com/",
-      "favorite": false
+      "url": "https://jp.techcrunch.com/"
     },
     {
       "id": 8,
       "name": "ferret [フェレット]",
       "category": [],
-      "url": "https://ferret-plus.com/",
-      "favorite": false
+      "url": "https://ferret-plus.com/"
     },
     {
       "id": 9,
       "name": "mizchi's blog",
       "category": [],
-      "url": "https://mizchi.hatenablog.com/",
-      "favorite": false
+      "url": "https://mizchi.hatenablog.com/"
     },
     {
       "id": 10,
       "name": "CodeZine（コードジン）",
       "category": [],
-      "url": "https://codezine.jp/",
-      "favorite": false
+      "url": "https://codezine.jp/"
     },
     {
       "id": 11,
       "name": "dev.to",
       "category": [],
-      "url": "https://dev.to/",
-      "favorite": false
+      "url": "https://dev.to/"
     },
     {
       "id": 12,
       "name": "Qiita",
       "category": [],
-      "url": "https://qiita.com/",
-      "favorite": false
+      "url": "https://qiita.com/"
     },
     {
       "id": 13,
       "name": "はてな(ITカテゴリー)",
       "category": [],
-      "url": "http://b.hatena.ne.jp/hotentry/it",
-      "favorite": true
+      "url": "http://b.hatena.ne.jp/hotentry/it"
     },
     {
       "id": 14,
       "name": "Yahoo(ITカテゴリー)",
       "category": [],
-      "url": "https://news.yahoo.co.jp/hl?c=c_sci",
-      "favorite": false
+      "url": "https://news.yahoo.co.jp/hl?c=c_sci"
     },
     {
       "id": 15,
       "name": "HTML5Experts.jp",
       "category": [],
-      "url": "https://html5experts.jp/",
-      "favorite": false
+      "url": "https://html5experts.jp/"
     },
     {
       "id": 16,
       "name": "TechFeed",
       "category": [],
-      "url": "https://techfeed.io",
-      "favorite": false
+      "url": "https://techfeed.io"
     },
     {
       "id": 17,
       "name": "Menthas",
       "category": [],
-      "url": "https://menthas.com/",
-      "favorite": false
+      "url": "https://menthas.com/"
     },
     {
       "id": 18,
       "name": "POSTD",
       "category": [],
-      "url": "http://postd.cc/",
-      "favorite": false
+      "url": "http://postd.cc/"
     },
     {
       "id": 19,
       "name": "SELECK",
       "category": [],
-      "url": "https://seleck.cc/",
-      "favorite": false
+      "url": "https://seleck.cc/"
     },
     {
       "id": 20,
       "name": "geechs magazine（ギークスマガジン）",
       "category": [],
-      "url": "https://geechs-magazine.com/",
-      "favorite": false
+      "url": "https://geechs-magazine.com/"
     },
     {
       "id": 21,
       "name": "UX MILK | クリエイターのためのUXメディア",
       "category": [],
-      "url": "http://uxmilk.jp/",
-      "favorite": false
+      "url": "http://uxmilk.jp/"
     },
     {
       "id": 22,
       "name": "Frontend Weekly",
       "category": [],
-      "url": "https://frontendweekly.tokyo/",
-      "favorite": false
+      "url": "https://frontendweekly.tokyo/"
     },
     {
       "id": 23,
       "name": "TechCrunch Japan",
       "category": [],
-      "url": "http://jp.techcrunch.com/",
-      "favorite": false
+      "url": "http://jp.techcrunch.com/"
     },
     {
       "id": 24,
       "name": "クックパッド開発者ブログ",
       "category": [],
-      "url": "http://techlife.cookpad.com/",
-      "favorite": false
+      "url": "http://techlife.cookpad.com/"
     },
     {
       "id": 25,
       "name": "Developers.IO",
       "category": [],
-      "url": "http://dev.classmethod.jp/",
-      "favorite": false
+      "url": "http://dev.classmethod.jp/"
     },
     {
       "id": 26,
       "name": "Hatena Developer Blog",
       "category": [],
-      "url": "http://developer.hatenastaff.com",
-      "favorite": false
+      "url": "http://developer.hatenastaff.com"
     },
     {
       "id": 27,
       "name": "Social Change! ソニックガーデン SonicGarden 倉貫義人のブログ",
       "category": [],
-      "url": "http://kuranuki.sonicgarden.jp/",
-      "favorite": false
+      "url": "http://kuranuki.sonicgarden.jp/"
     },
     {
       "id": 28,
       "name": "Mercari Engineering Blog",
       "category": [],
-      "url": "https://tech.mercari.com/",
-      "favorite": false
+      "url": "https://tech.mercari.com/"
     },
     {
       "id": 29,
       "name": "ひしだま's 技術メモページ",
       "category": [],
-      "url": "http://www.ne.jp/asahi/hishidama/home/tech/index.html",
-      "favorite": false
+      "url": "http://www.ne.jp/asahi/hishidama/home/tech/index.html"
     },
     {
       "id": 30,
       "name": "Stack Overflow",
       "category": [],
-      "url": "http://stackoverflow.com/",
-      "favorite": false
+      "url": "http://stackoverflow.com/"
     },
     {
       "id": 31,
       "name": "Stack Overflow(日本版)",
       "category": [],
-      "url": "http://ja.stackoverflow.com/",
-      "favorite": false
+      "url": "http://ja.stackoverflow.com/"
     },
     {
       "id": 32,
       "name": "teratail【テラテイル】",
       "category": [],
-      "url": "https://teratail.com/",
-      "favorite": false
+      "url": "https://teratail.com/"
     },
     {
       "id": 33,
       "name": "html5j ― 「つながる」「学べる」「盛り上がる」",
       "category": [],
-      "url": "http://html5j.org/",
-      "favorite": false
+      "url": "http://html5j.org/"
     },
     {
       "id": 34,
       "name": "技術書典",
       "category": [],
-      "url": "https://techbookfest.org/",
-      "favorite": false
+      "url": "https://techbookfest.org/"
     }
   ]
 }

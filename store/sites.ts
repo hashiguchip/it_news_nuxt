@@ -12,11 +12,6 @@ export const actions = {
 };
 
 export const getters = {
-  favorite: state => {
-    return state.sites.filter(site => {
-      return site.favorite;
-    });
-  },
   blog: state => {
     return state.sites.filter(site => {
       return site.category.includes(1);

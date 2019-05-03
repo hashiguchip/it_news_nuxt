@@ -25,7 +25,11 @@ export default class extends Vue {
   }
   // 一覧取得
   public get items(): any {
-    return this.$store.getters["sites/favorite"];
+    const favoriteSitesIds = this.$store.state.user.user.favorite;
+    const sites = this.$store.state.sites.sites;
+    return sites.filter(site => {
+      return favoriteSitesIds.includes(site.id);
+    });
   }
   public toggleFavorite(site): void {
     //todo 型とか
