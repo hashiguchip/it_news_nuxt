@@ -20,10 +20,7 @@ import { Component, Vue } from "~/node_modules/vue-property-decorator";
 })
 export default class extends Vue {
   public async mounted() {
-    const url = "http://localhost:3333/sites";
-    const sites = await this.$axios.$get(url);
-    this.$store.dispatch("main/changePageName", "ホーム");
-    this.$store.dispatch("sites/fetchSites", sites);
+    this.$store.dispatch("main/changePageName", "お気に入り");
   }
   // 一覧取得
   public get items(): string {

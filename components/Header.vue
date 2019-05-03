@@ -1,7 +1,8 @@
 <template lang="pug">
+include ../config/pug/variable.pug
 .header-block
-    nuxt-link.header-block__title(to="/") たいとる
-    .header-block__subtitle たいとおお
+    nuxt-link.header-block__title(to="/") #{siteTitle}
+    .header-block__subtitle #{subTitle}
     .header-block__menus
         nuxt-link.header-block__about(to="about") About
 </template>
@@ -17,6 +18,7 @@ export default class extends Vue {}
 .header-block {
   position: relative;
   padding: 0 10px;
+  color: #2a272e;
   &__title {
     padding-top: 10px;
     font-size: 24px;
