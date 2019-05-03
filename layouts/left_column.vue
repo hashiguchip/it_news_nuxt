@@ -51,6 +51,7 @@ export default class extends Vue {
     margin-right: 50px;
   }
   &__contents {
+    width: 80%;
   }
 }
 </style>
