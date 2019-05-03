@@ -2,32 +2,51 @@
   "category": [
     {
       "id": 1,
+      "name": "Favorite",
+      "description": "お気に入り一覧",
+      "page": "favorite",
+      "image": "path"
+    },
+    {
+      "id": 1,
+      "name": "ALL",
+      "description": "すべての一覧",
+      "page": "/",
+      "image": "path"
+    },
+    {
+      "id": 1,
       "name": "NEWS",
       "description": "IT業界のNEWS一覧",
+      "page": "news",
       "image": "path"
     },
     {
       "id": 1,
       "name": "Programing",
       "description": "プログラミング",
+      "page": "programing",
       "image": "path"
     },
     {
       "id": 1,
       "name": "Gadget",
       "description": "ガジェット",
+      "page": "gadget",
       "image": "path"
     },
     {
       "id": 1,
       "name": "Blog",
       "description": "IT関係ブログ",
+      "page": "blog",
       "image": "path"
     },
     {
       "id": 1,
       "name": "Joke",
       "description": "ネタ",
+      "page": "joke",
       "image": "path"
     }
   ]

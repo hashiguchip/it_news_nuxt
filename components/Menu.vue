@@ -2,7 +2,7 @@
 .menus
     .menus__item.menu(v-for="category in categories")
         img.menu__image(src="https://placehold.jp/150x150.png")
-        nuxt-link.menu__text(to="favorite") {{category.name}}
+        nuxt-link.menu__text(:to="category.page") {{category.name}}
 </template>
 
 <script lang="ts">
