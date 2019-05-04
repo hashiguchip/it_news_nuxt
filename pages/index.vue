@@ -31,7 +31,6 @@ export default class extends Vue {
   }
   public isFavorite(id: number): boolean {
     const favoriteSitesIds = this.$store.state.user.user.favorite;
-    console.log(favoriteSitesIds.includes(id));
     return favoriteSitesIds.includes(id);
   }
   public get favoriteStatus() {
