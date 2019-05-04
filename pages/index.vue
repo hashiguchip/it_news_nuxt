@@ -24,6 +24,10 @@ export default class extends Vue {
     const sites = await this.$axios.$get(url);
     this.$store.dispatch("main/changePage", getPageData("/"));
     this.$store.dispatch("sites/fetchSites", sites);
+    this.$store.dispatch(
+      "user/updateFavorite",
+      JSON.parse(this.$localStorage.get("userData"))
+    );
   }
   // 一覧取得
   public get items(): string {

@@ -1,5 +1,4 @@
 import pkg from "./package";
-
 export default {
   mode: "universal",
 
@@ -26,7 +25,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ["~/plugins/vue-local-storage"],
 
   /*
    ** Nuxt.js modules
