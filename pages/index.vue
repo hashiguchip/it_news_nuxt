@@ -6,7 +6,7 @@
             img.panel__image(:src="item.image")
             .panel__favorite(
                 @click="toggleFavorite(item)"
-                :class="{ 'favorite-icon__on': item.favorite, 'favorite-icon__off': !item.favorite }"
+                :class="favoriteStatus(item)"
             )
 </template>
 <script lang="ts">
@@ -28,6 +28,18 @@ export default class extends Vue {
       "user/updateFavorite",
       JSON.parse(this.$localStorage.get("userData"))
     );
+  }
+  public isFavorite(id: number): boolean {
+    const favoriteSitesIds = this.$store.state.user.user.favorite;
+    console.log(favoriteSitesIds.includes(id));
+    return favoriteSitesIds.includes(id);
+  }
+  public get favoriteStatus() {
+    return function(item) {
+      return this.isFavorite(item.id)
+        ? "favorite-icon__on"
+        : "favorite-icon__off";
+    };
   }
   // 一覧取得
   public get items(): string {
