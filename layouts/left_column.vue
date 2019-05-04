@@ -3,7 +3,7 @@
     Header.page-wrapper__header
     Hero
     .page-wrapper__main.main
-        .main__left レフトメニュー
+        LeftMenu.main__left
         nuxt.main__contents
     Footer.page-wrapper__footer
 </template>
@@ -13,10 +13,11 @@ import { namespace } from "vuex-class";
 import Hero from "~/components/Hero.vue";
 import Header from "~/components/Header.vue";
 import Footer from "~/components/Footer.vue";
+import LeftMenu from "~/components/LeftMenu.vue";
 
 // const People = namespace(main.name);
 
-@Component({ components: { Header, Footer, Hero } })
+@Component({ components: { Header, Footer, Hero, LeftMenu } })
 export default class extends Vue {
   public items = [];
   public async mounted() {
