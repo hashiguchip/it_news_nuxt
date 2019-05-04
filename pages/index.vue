@@ -3,7 +3,7 @@
     .main-contents__panels.panels-block
         .panels-block__panel.panel(v-for="item in items")
             a.panel__text(:href="item.url" target="_blank") {{item.name}}
-            img.panel__image(:src="item.image")
+            img.panel__image(:src="getImage(item)")
             .panel__favorite(
                 @click="toggleFavorite(item)"
                 :class="favoriteStatus(item)"
@@ -29,6 +29,11 @@ export default class extends Vue {
   // 一覧取得
   public get items(): string {
     return this.$store.state.sites.sites;
+  }
+  public get getImage() {
+    return function(site) {
+      return require("~/assets/images/sites/" + site.image + ".png");
+    };
   }
 }
 </script>
