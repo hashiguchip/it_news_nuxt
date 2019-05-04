@@ -7,20 +7,24 @@
             //todo:favorite ハート
             .panel__favorite(
                 @click="toggleFavorite(item)"
-                :class="{ 'favorite-icon__on': item.favorite, 'favorite-icon__off': !item.favorite }"
+                :class="favoriteStatus(item)"
             )
 </template>
 <script lang="ts">
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
 import { getPageData } from "~/store/main";
+import ListMixin from "~/mixins/mixin";
 
 @Component({
+  mixins: [ListMixin],
   transition: (to, from) => {
     return "page";
   }
 })
 export default class extends Vue {
   public async mounted() {
+    this.listInit();
+    //ページ情報更新
     this.$store.dispatch("main/changePage", getPageData("favorite"));
   }
   // 一覧取得
@@ -30,14 +34,6 @@ export default class extends Vue {
     return sites.filter(site => {
       return favoriteSitesIds.includes(site.id);
     });
-  }
-  public toggleFavorite(site): void {
-    if (!site.favorite) {
-      this.$store.dispatch("user/registerFavorite", site.id);
-    } else {
-      this.$store.dispatch("user/removeFavorite", site.id);
-    }
-    this.$store.dispatch("sites/favorite", site);
   }
 }
 </script>
