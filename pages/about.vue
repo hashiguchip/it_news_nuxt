@@ -1,8 +1,8 @@
 <template lang="pug">
 .main-contents
-    article.main-contents__article.article(v-for="text in aboutTexts")
-        .article__head(v-if="text.tag === 'head'") {{text.text}}
-        p.article__p(v-if="text.tag === 'p'") {{text.text}}
+    SiteList.main-contents__panels(
+        :siteList="items"
+    )
 </template>
 <script lang="ts">
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
