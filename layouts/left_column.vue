@@ -48,7 +48,6 @@ export default class extends Vue {
   display: flex;
   &__left {
     width: 20%;
-    background: #dcd1ff;
     margin-right: 50px;
   }
   &__contents {

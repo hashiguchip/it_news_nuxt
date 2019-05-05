@@ -1,16 +1,23 @@
 <template lang="pug">
 .menus
     .menus__item.menu(v-for="category in categories")
-        img.menu__image(src="https://placehold.jp/150x150.png")
+        img.menu__image(:src="category.image|categoryImagePath")
         nuxt-link.menu__text(:to="category.page") {{category.name}}
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
 
-@Component
+@Component({
+  filters: {
+    categoryImagePath: function(value) {
+      //一回変数に入れるとだめみたい。なんでだろう？
+      const categoryImageDir = "~/assets/images/category/" + value;
+      return require("~/assets/images/category/" + value);
+    }
+  }
+})
 export default class extends Vue {
-  public test = [];
   public async mounted() {
     const url = "http://localhost:3333/category";
     const categories = await this.$axios.$get(url);
@@ -35,10 +42,12 @@ export default class extends Vue {
   position: relative;
   width: 100%;
   height: 60px;
+  border-radius: 10px;
   &__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: inherit;
   }
   &__text {
     position: absolute;
@@ -50,8 +59,8 @@ export default class extends Vue {
     width: 100%;
     height: 100%;
     background: rgba(black, 0.2);
-    border-radius: 10px;
-    color: black;
+    color: white;
+    border-radius: inherit;
   }
 }
 </style>

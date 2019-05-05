@@ -56,7 +56,7 @@ export default class extends Vue {
     height: 100%;
     background: rgba(black, 0.2);
     border-radius: 10px;
-    color: black;
+    color: #f8f9ed;
   }
 }
 </style>
