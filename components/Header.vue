@@ -18,7 +18,7 @@ export default class extends Vue {}
 .header-block {
   position: relative;
   padding: 0 10px;
-  color: #2a272e;
+  color: #e8e8dc;
   &__title {
     padding-top: 10px;
     font-size: 24px;
