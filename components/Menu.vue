@@ -1,16 +1,23 @@
 <template lang="pug">
 .menus
     .menus__item.menu(v-for="category in categories")
-        img.menu__image(src="https://placehold.jp/150x150.png")
+        img.menu__image(:src="category.image|categoryImagePath")
         nuxt-link.menu__text(:to="category.page") {{category.name}}
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
 
-@Component
+@Component({
+  filters: {
+    categoryImagePath: function(value) {
+      //一回変数に入れるとだめみたい。なんでだろう？
+      const categoryImageDir = "~/assets/images/category/" + value;
+      return require("~/assets/images/category/" + value);
+    }
+  }
+})
 export default class extends Vue {
-  public test = [];
   public async mounted() {
     const url = "http://localhost:3333/category";
     const categories = await this.$axios.$get(url);

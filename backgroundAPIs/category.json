@@ -5,49 +5,49 @@
       "name": "Favorite",
       "description": "お気に入り一覧",
       "page": "favorite",
-      "image": "path"
+      "image": "Favorite.png"
     },
     {
       "id": 1,
       "name": "ALL",
       "description": "すべての一覧",
       "page": "/",
-      "image": "path"
+      "image": "cat.jpg"
     },
     {
       "id": 1,
       "name": "NEWS",
       "description": "IT業界のNEWS一覧",
       "page": "news",
-      "image": "path"
+      "image": "NEWS.jpg"
     },
     {
       "id": 1,
       "name": "Programming",
       "description": "プログラミング",
       "page": "programming",
-      "image": "path"
+      "image": "Programming.jpg"
     },
     {
       "id": 1,
       "name": "Gadget",
       "description": "ガジェット",
       "page": "gadget",
-      "image": "path"
+      "image": "Gadget.jpg"
     },
     {
       "id": 1,
       "name": "Blog",
       "description": "IT関係ブログ",
       "page": "blog",
-      "image": "path"
+      "image": "Blog.jpg"
     },
     {
       "id": 1,
       "name": "Joke",
       "description": "ネタ",
       "page": "joke",
-      "image": "path"
+      "image": "Joke.jpg"
     }
   ]
 }
