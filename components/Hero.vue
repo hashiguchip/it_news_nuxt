@@ -40,12 +40,13 @@ export default class extends Vue {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #f5f5f5;
-    font-size: 24px;
+    font-size: 44px;
+    letter-spacing: 1px;
     text-shadow: 0 2px 7px #000000;
   }
   &__description {
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #f5f5f5;
