@@ -26,11 +26,7 @@ export default class extends Vue {
   public layout() {
     return "default";
   }
-  public items = [];
-  public async mounted() {
-    const url = "http://localhost:3333/sites";
-    this.items = await this.$axios.$get(url);
-  }
+  public async mounted() {}
 }
 </script>
 <style scoped lang="scss">

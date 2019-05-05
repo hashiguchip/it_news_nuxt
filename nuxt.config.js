@@ -1,5 +1,9 @@
 import pkg from "./package";
 export default {
+  env: {
+    baseUrl: process.env.BASE_URL || "http://localhost:3000",
+    baseUrlAPI: process.env.BASE_URL || "http://localhost:3333"
+  },
   mode: "universal",
 
   /*

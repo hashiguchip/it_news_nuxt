@@ -6,12 +6,13 @@ import Component from "vue-class-component";
 @Component
 export default class ListMixin extends Vue {
   public urls = {
-    sites: "http://localhost:3333/sites",
-    category: "http://localhost:3333/category"
+    sites: process.env.baseUrlAPI + "/sites",
+    category: process.env.baseUrlAPI + "/category"
   };
 
   public async listInit() {
     //初回データ登録
+
     if (this.$store.state.sites.sites.length === 0) {
       const sites = await this.$axios.$get(this.urls.sites);
       this.$store.dispatch("sites/fetchSites", sites);

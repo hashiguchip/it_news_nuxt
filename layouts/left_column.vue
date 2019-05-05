@@ -19,11 +19,7 @@ import LeftMenu from "~/components/LeftMenu.vue";
 
 @Component({ components: { Header, Footer, Hero, LeftMenu } })
 export default class extends Vue {
-  public items = [];
-  public async mounted() {
-    const url = "http://localhost:3333/sites";
-    this.items = await this.$axios.$get(url);
-  }
+  public async mounted() {}
 }
 </script>
 <style scoped lang="scss">

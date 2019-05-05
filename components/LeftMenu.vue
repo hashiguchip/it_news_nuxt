@@ -11,8 +11,9 @@ import { Component, Vue } from "~/node_modules/vue-property-decorator";
 @Component
 export default class extends Vue {
   public async mounted() {
-    const url = "http://localhost:3333/category";
-    const categories = await this.$axios.$get(url);
+    const categories = await this.$axios.$get(
+      process.env.baseUrlAPI + "/category"
+    );
     this.$store.dispatch("categories/fetchCategories", categories);
   }
   // 一覧取得
