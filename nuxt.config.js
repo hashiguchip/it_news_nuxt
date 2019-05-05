@@ -9,6 +9,19 @@ export default {
   /*
    ** Headers of the page
    */
+  head: {
+    script: [
+      // {
+      //   src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+      // }
+    ],
+    link: [
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,900&amp;subset=japanese"
+      }
+    ]
+  },
 
   /*
    ** Customize the progress-bar color
@@ -21,6 +34,7 @@ export default {
   css: [
     "normalize.css/normalize.css",
     "~/assets/css/reset.css",
+    "~/assets/css/font.sass",
     "~/assets/css/main.css",
     "~/assets/css/variables/colors.sass",
     "~/assets/css/components/main_list.sass"
