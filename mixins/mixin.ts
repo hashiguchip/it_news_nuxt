@@ -1,7 +1,6 @@
 // mixin.js
 import Vue from "vue";
 import Component from "vue-class-component";
-import { getPageData } from "~/store/main";
 
 // You can declare a mixin as the same style as components.
 @Component

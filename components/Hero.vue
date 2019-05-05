@@ -1,6 +1,6 @@
 <template lang="pug">
 .page-hero
-    img.page-hero__img(:src="page.image|categoryImagePath")
+    img.page-hero__img(:src="page.image|getCategoryImagePath")
     .page-hero__title {{page.title}}
     .page-hero__description {{page.description}}
 </template>
@@ -9,15 +9,7 @@
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
 import { IPage } from "~/store/main";
 
-@Component({
-  filters: {
-    categoryImagePath: function(value) {
-      //一回変数に入れるとだめみたい。なんでだろう？
-      if (!value) return require("~/assets/images/category/Favorite.png");
-      return require("~/assets/images/category/" + value);
-    }
-  }
-})
+@Component
 export default class extends Vue {
   public get page(): IPage {
     return this.$store.state.main.page;
