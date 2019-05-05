@@ -1,6 +1,6 @@
 <template lang="pug">
 .page-wrapper
-    Header.page-wrapper__header.
+    Header.page-wrapper__header
     Hero
     Menu
     .page-wrapper__main

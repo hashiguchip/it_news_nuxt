@@ -36,8 +36,7 @@ export default {
     "~/assets/css/reset.css",
     "~/assets/css/font.sass",
     "~/assets/css/main.css",
-    "~/assets/css/variables/colors.sass",
-    "~/assets/css/components/main_list.sass"
+    "~/assets/css/variables/colors.sass"
   ],
 
   /*
