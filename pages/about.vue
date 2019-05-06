@@ -5,7 +5,7 @@
         p.article__p(v-if="text.tag === 'p'") {{text.text}}
 </template>
 <script lang="ts">
-import { Component, Vue } from "~/node_modules/vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import { getPageData } from "~/store/main";
 @Component({
   layout: "left_column"

@@ -10,20 +10,16 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "~/node_modules/vue-property-decorator";
-import { getPageData } from "~/store/main";
+import { Component, Prop } from "vue-property-decorator";
 import ListMixin from "~/mixins/mixin";
 
-@Component({
-  mixins: [ListMixin],
-
-})
-export default class extends Vue {
+@Component
+export default class extends ListMixin {
   /**
    * 表示するサイトリスト
    */
   @Prop({ type: Array })
-  siteList: Array;
+  siteList: {}[];
   /**
    * mounted
    */
