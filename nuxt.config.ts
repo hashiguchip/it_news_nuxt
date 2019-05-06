@@ -1,5 +1,5 @@
-import pkg from "./package";
-export default {
+import NuxtConfiguration from "@nuxt/config";
+const config: NuxtConfiguration = {
   env: {
     baseUrl: process.env.BASE_URL || "http://localhost:3000",
     baseUrlAPI: process.env.BASE_URL || "http://localhost:3333"
@@ -18,7 +18,8 @@ export default {
     link: [
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,900&amp;subset=japanese"
+        href:
+          "https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,900&amp;subset=japanese"
       }
     ]
   },
@@ -42,7 +43,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/vue-local-storage", "~/plugins/filter/appFilter"],
+  plugins: [
+    "~/plugins/vue-local-storage",
+    "~/plugins/filter/appFilter",
+    "~/plugins/axios"
+  ],
 
   /*
    ** Nuxt.js modules
@@ -59,3 +64,5 @@ export default {
     extend(config, ctx) {}
   }
 };
+
+export default config;

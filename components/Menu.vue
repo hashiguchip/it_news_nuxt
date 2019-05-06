@@ -7,14 +7,13 @@
 
 <script lang="ts">
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
+import axios from "axios";
 
 @Component
 export default class extends Vue {
   public async mounted() {
-    const categories = await this.$axios.$get(
-      process.env.baseUrlAPI + "/category"
-    );
-    this.$store.dispatch("categories/fetchCategories", categories);
+    const categories = await axios.get(process.env.baseUrlAPI + "/category");
+    this.$store.dispatch("categories/fetchCategories", categories.data);
   }
   // 一覧取得
   public get categories(): string {

@@ -1,6 +1,7 @@
 // mixin.js
 import Vue from "vue";
 import Component from "vue-class-component";
+import axios from "axios";
 
 // You can declare a mixin as the same style as components.
 @Component
@@ -14,8 +15,8 @@ export default class ListMixin extends Vue {
     //初回データ登録
 
     if (this.$store.state.sites.sites.length === 0) {
-      const sites = await this.$axios.$get(this.urls.sites);
-      this.$store.dispatch("sites/fetchSites", sites);
+      const sites = await axios.get(this.urls.sites);
+      this.$store.dispatch("sites/fetchSites", sites.data);
     }
     this.$store.dispatch(
       "user/updateFavorite",
