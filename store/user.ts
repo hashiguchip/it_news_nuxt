@@ -30,12 +30,12 @@ export const actions = {
 export const mutations = {
   registerFavorite(state, favoriteSiteId) {
     state.user.favorite.push(favoriteSiteId);
-    Vue.localStorage.set("userData", JSON.stringify(state.user));
+    // Vue.localStorage.set("userData", JSON.stringify(state.user));
   },
   removeFavorite(state, removeFavoriteSiteId) {
     state.user.favorite = state.user.favorite.filter(value => {
       return value !== removeFavoriteSiteId;
     });
-    Vue.localStorage.set("userData", JSON.stringify(state.user));
+    // Vue.localStorage.set("userData", JSON.stringify(state.user));
   }
 };

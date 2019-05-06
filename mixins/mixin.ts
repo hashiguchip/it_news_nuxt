@@ -20,7 +20,8 @@ export default class ListMixin extends Vue {
     }
     this.$store.dispatch(
       "user/updateFavorite",
-      JSON.parse(this.$localStorage.get("userData"))
+      {}
+      //JSON.parse(this.$localStorage.get("userData"))
     );
   }
   public isFavorite(id: number): boolean {
