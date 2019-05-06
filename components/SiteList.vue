@@ -16,9 +16,7 @@ import ListMixin from "~/mixins/mixin";
 
 @Component({
   mixins: [ListMixin],
-  transition: (to, from) => {
-    return "page";
-  }
+
 })
 export default class extends Vue {
   /**

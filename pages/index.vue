@@ -5,16 +5,12 @@
     )
 </template>
 <script lang="ts">
-import { Component, Vue } from "~/node_modules/vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import { getPageData } from "~/store/main";
-import SiteList from "~/components/SiteList.vue";
 
 @Component({
   components: {
-    SiteList
-  },
-  transition: (to, from) => {
-    return "page";
+    SiteList: () => import("~/components/SiteList.vue")
   }
 })
 export default class extends Vue {

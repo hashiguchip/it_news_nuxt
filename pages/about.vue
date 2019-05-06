@@ -8,10 +8,7 @@
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
 import { getPageData } from "~/store/main";
 @Component({
-  layout: "left_column",
-  transition: (to, from) => {
-    return "page";
-  }
+  layout: "left_column"
 })
 export default class extends Vue {
   /**
