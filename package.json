@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "mock_server": "json-server --watch backgroundAPIs/API.js --port 3333",
+    "mock_server": "json-server --watch mock_server/API.js --port 3333",
     "get_screenshots": "node modules/screenshots.ts",
     "build": "nuxt build",
     "start": "nuxt start",

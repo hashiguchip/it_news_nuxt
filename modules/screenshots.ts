@@ -19,7 +19,7 @@ const options = {
   renderDelay: 3000
 };
 
-const sites = JSON.parse(fs.readFileSync("backgroundAPIs/data.json", "utf8"));
+const sites = JSON.parse(fs.readFileSync("mock_server/data.json", "utf8"));
 
 const storeDirectory = "assets/images/sites/";
 
