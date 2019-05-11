@@ -43,11 +43,7 @@ const config: NuxtConfiguration = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    "~/plugins/vue-local-storage.ts",
-    "~/plugins/filter/appFilter",
-    "~/plugins/axios"
-  ],
+  plugins: ["~/plugins/vue-local-storage.ts", "~/plugins/filter/appFilter"],
 
   /*
    ** Nuxt.js modules
