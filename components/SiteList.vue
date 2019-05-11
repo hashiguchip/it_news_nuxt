@@ -24,7 +24,7 @@ export default class extends ListMixin {
    * mounted
    */
   public async mounted() {
-    this.listInit();
+    await this.listInit();
   }
   /**
    * 画像URLの作成

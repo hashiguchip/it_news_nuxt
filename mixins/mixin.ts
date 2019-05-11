@@ -15,8 +15,12 @@ export default class ListMixin extends Vue {
     //初回データ登録
 
     if (this.$store.state.sites.sites.length === 0) {
-      const sites = await axios.get(this.urls.sites);
-      this.$store.dispatch("sites/fetchSites", sites.data);
+      try {
+        const sites = await axios.get(this.urls.sites);
+        this.$store.dispatch("sites/fetchSites", sites.data);
+      } catch (e) {
+        console.log(e);
+      }
     }
     this.$store.dispatch(
       "user/updateFavorite",
