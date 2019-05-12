@@ -15,8 +15,8 @@
     ],
     "rewrites": [
       {
-        "source": "**",
-        "destination": "app"
+        "source": "/api/**",
+        "destination": "webApi"
       }
     ]
   }

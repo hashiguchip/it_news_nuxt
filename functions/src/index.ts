@@ -22,7 +22,9 @@ admin.initializeApp();
 
 // const nuxt = new Nuxt(config);
 
-app.get("/sites", (req: Express.Request, res: Express.Response) => {
+const baseUrl = "/it-news-b9a2d/us-central1/webApi";
+
+app.get(baseUrl + "/sites", (req: Express.Request, res: Express.Response) => {
   res.set("Cache-Control", "public, max-age=600, s-maxage-1200");
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -32,25 +34,33 @@ app.get("/sites", (req: Express.Request, res: Express.Response) => {
   res.send(data);
 });
 
-app.get("/category", (req: Express.Request, res: Express.Response) => {
+app.get(
+  baseUrl + "/category",
+  (req: Express.Request, res: Express.Response) => {
+    res.set("Cache-Control", "public, max-age=600, s-maxage-1200");
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    res.send(category);
+  }
+);
+
+app.get(baseUrl + "/", (req: Express.Request, res: Express.Response) => {
   res.set("Cache-Control", "public, max-age=600, s-maxage-1200");
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  res.send(category);
+  res.send("インデックス");
 });
 
-app.get("*", (req: Express.Request, res: Express.Response) => {
-  res.set("Cache-Control", "public, max-age=600, s-maxage-1200");
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  res.send(category);
-});
+// app.get("*", (req: Express.Request, res: Express.Response) => {
+//   res.set("Cache-Control", "public, max-age=600, s-maxage-1200");
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   res.send(category);
+// });
 
 // function handleRequest(req: Express.Request, res: Express.Response) {
 //   res.set("Cache-Control", "public, max-age=600, s-maxage-1200");
@@ -68,4 +78,4 @@ app.get("*", (req: Express.Request, res: Express.Response) => {
 
 // app.get("*", handleRequest);
 
-exports.app = functions.https.onRequest(app);
+export const webApi = functions.https.onRequest(app);
