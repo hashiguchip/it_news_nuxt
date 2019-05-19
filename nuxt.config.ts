@@ -5,6 +5,8 @@ const config: NuxtConfiguration = {
     baseUrlAPI: process.env.BASE_URL || "http://localhost:3333"
   },
   mode: "universal",
+  buildDir: "functions/nuxt",
+  ssr: true,
 
   /*
    ** Headers of the page
@@ -54,10 +56,13 @@ const config: NuxtConfiguration = {
    ** Build configuration
    */
   build: {
+    publicPath: "http://localhost:5000",
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      // target:'node'
+    }
   }
 };
 
