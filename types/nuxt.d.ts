@@ -19,6 +19,7 @@ export interface ApplicationContext {
   query: Route["query"];
   req: RequestOptions;
   res: ServerResponse;
+  store: any;
   redirect: (path: string, query?: Route["query"]) => void;
   error: (params: { statusCode: number; message: string }) => void;
   beforeNuxtRender: (

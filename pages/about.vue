@@ -16,8 +16,8 @@ export default class extends Vue {
    */
   layout: string = "left_column";
 
-  public mounted() {
-    this.$store.dispatch("main/changePage", getPageData("about"));
+  public async fetch({ store }) {
+    store.dispatch("main/changePage", getPageData("about"));
   }
 
   /**

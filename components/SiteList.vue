@@ -10,22 +10,35 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop } from "vue-property-decorator";
-import ListMixin from "~/mixins/mixin";
+import { Vue, Component, Prop } from "vue-property-decorator";
+import axios from "axios";
 
 @Component
-export default class extends ListMixin {
+export default class extends Vue {
+  public isFavorite(id: number): boolean {
+    const favoriteSitesIds = this.$store.state.user.user.favorite; //ここがデータ持つ
+    return favoriteSitesIds.includes(id);
+  }
+  public toggleFavorite(site): void {
+    if (!this.isFavorite(site.id)) {
+      this.$store.dispatch("user/registerFavorite", site.id);
+    } else {
+      this.$store.dispatch("user/removeFavorite", site.id);
+    }
+    this.$store.dispatch("sites/favorite", site);
+  }
+  public get favoriteStatus() {
+    return function(item) {
+      return this.isFavorite(item.id)
+        ? "favorite-icon__on"
+        : "favorite-icon__off";
+    };
+  }
   /**
    * 表示するサイトリスト
    */
   @Prop({ type: Array })
   siteList: {}[];
-  /**
-   * mounted
-   */
-  public async mounted() {
-    await this.listInit();
-  }
   /**
    * 画像URLの作成
    */

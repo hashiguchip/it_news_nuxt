@@ -9,24 +9,19 @@
 </template>
 <script lang="ts">
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
-import { namespace } from "vuex-class";
 import Hero from "~/components/Hero.vue";
 import Header from "~/components/Header.vue";
 import Menu from "~/components/Menu.vue";
 import Footer from "~/components/Footer.vue";
 
-// const People = namespace(main.name);
-
 @Component({ components: { Header, Footer, Hero, Menu } })
 export default class extends Vue {
-  // @People.State selected;
   /**
    * レイアウト
    */
   public layout() {
     return "default";
   }
-  public async mounted() {}
 }
 </script>
 <style scoped lang="scss">

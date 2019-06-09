@@ -1,12 +1,15 @@
 import NuxtConfiguration from "@nuxt/config";
 const config: NuxtConfiguration = {
+  dev: process.env.NODE_ENV !== "production",
   env: {
     baseUrl: process.env.BASE_URL || "http://localhost:3000",
-    baseUrlAPI: process.env.BASE_URL || "http://localhost:3333"
+    baseUrlAPI: process.env.BASE_URL || "https://it-news-b9a2d.firebaseapp.com"
   },
   mode: "universal",
-  buildDir: "functions/nuxt",
+  buildDir: process.env.NODE_ENV === "production" ? "functions/.nuxt" : "functions/.nuxt",
+  // todo:firebase用
   ssr: true,
+  ssrLog: true,
 
   /*
    ** Headers of the page
@@ -56,7 +59,8 @@ const config: NuxtConfiguration = {
    ** Build configuration
    */
   build: {
-    publicPath: "http://localhost:5000",
+    // todo:いい感じに本番とローカル分けたい
+    publicPath: "https://it-news-b9a2d.firebaseapp.com",
     /*
      ** You can extend webpack config here
      */

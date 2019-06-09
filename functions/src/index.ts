@@ -1,4 +1,7 @@
 import * as functions from "firebase-functions";
+
+process.env.DEBUG = "nuxt:*";
+// import * as functions from "firebase-functions";
 // The Firebase Admin SDK to access the Firebase Realtime Database.
 
 import * as Express from "express";
@@ -10,19 +13,20 @@ import * as category from "./category.json";
 
 admin.initializeApp();
 
-// import { Nuxt } from "nuxt";
+const { Nuxt } = require("nuxt");
 
-// const config = {
-//   dev: false,
-//   buildDir: "nuxt",
-//   build: {
-//     publicPath: "/"
-//   }
-// };
+const config = {
+  dev: false,
+  ssr: true,
+  ssrLog: true
+  // buildDir: "../nuxt",
+  // build: {
+  //   publicPath: "/"
+  // }
+};
 
-// const nuxt = new Nuxt(config);
-
-const baseUrl = "/it-news-b9a2d/us-central1/webApi";
+//const baseUrl = "https://it-news-b9a2d.firebaseapp.com";
+const baseUrl = "";
 
 app.get(baseUrl + "/sites", (req: Express.Request, res: Express.Response) => {
   res.set("Cache-Control", "public, max-age=600, s-maxage-1200");
@@ -47,35 +51,13 @@ app.get(
   }
 );
 
-app.get(baseUrl + "/", (req: Express.Request, res: Express.Response) => {
-  res.set("Cache-Control", "public, max-age=600, s-maxage-1200");
-  res.send("インデックス");
-});
+const nuxt = new Nuxt(config);
 
-// app.get("*", (req: Express.Request, res: Express.Response) => {
-//   res.set("Cache-Control", "public, max-age=600, s-maxage-1200");
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept"
-//   );
-//   res.send(category);
-// });
+// const port = process.env.PORT || 3000;
 
-// function handleRequest(req: Express.Request, res: Express.Response) {
-//   res.set("Cache-Control", "public, max-age=600, s-maxage-1200");
-//   // add variables to req to use them in Nuxt component
-//   res.send("aaaaaaaaaaaaaaaaaaa");
-//   // nuxt
-//   //   .renderRoute("/", { req })
-//   //   .then(result => {
-//   //     res.send(result.html);
-//   //   })
-//   //   .catch(e => {
-//   //     res.send(e);
-//   //   });
-// }
+// すべてのルートを Nuxt.js でレンダリングする
+// firebase serveだと動かない..?? ってことか？？
+app.use(nuxt.render);
 
-// app.get("*", handleRequest);
-
-export const webApi = functions.https.onRequest(app);
+// Expose Express API as a single Cloud Function:
+exports.app = functions.https.onRequest(app);

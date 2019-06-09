@@ -11,10 +11,10 @@ import axios from "axios";
 
 @Component
 export default class extends Vue {
-  public async mounted() {
+  public async fetch({ store }) {
     try {
       const categories = await axios.get(process.env.baseUrlAPI + "/category");
-      this.$store.dispatch("categories/fetchCategories", categories.data);
+      store.dispatch("categories/fetchCategories", categories.data.category);
     } catch (e) {
       console.log(e);
     }

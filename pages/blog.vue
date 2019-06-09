@@ -14,9 +14,9 @@ import { getPageData } from "~/store/main";
   }
 })
 export default class extends Vue {
-  public async mounted() {
+  public async fetch({ store }) {
     //ページ情報更新
-    this.$store.dispatch("main/changePage", getPageData("blog"));
+    store.dispatch("main/changePage", getPageData("blog"));
   }
   // 一覧取得
   public get items(): any {

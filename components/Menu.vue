@@ -9,18 +9,14 @@
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
 import axios from "axios";
 
-@Component
-export default class extends Vue {
-  public async mounted() {
-    try {
-      const categories = await axios.get(process.env.baseUrlAPI + "/category");
-      this.$store.dispatch("categories/fetchCategories", categories.data);
-    } catch (e) {
-      console.log(e);
-    }
+@Component({
+  components: {
+    SiteList: () => import("~/components/SiteList.vue")
   }
+})
+export default class extends Vue {
   // 一覧取得
-  public get categories(): string {
+  public get categories(): Object[] {
     return this.$store.state.categories.list;
   }
 }

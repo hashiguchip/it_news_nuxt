@@ -4,7 +4,7 @@ export const state = () => ({
 
 export const actions = {
   fetchSites({ commit }, sites) {
-    commit("fetchSites", sites);
+    commit("fetchSites", sites.sites);
   },
   favorite({ commit }, site) {
     commit("favorite", site);
