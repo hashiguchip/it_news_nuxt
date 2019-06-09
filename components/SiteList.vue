@@ -4,17 +4,22 @@
         a.panel__text(:href="site.url" target="_blank") {{site.name}}
         img.panel__image(:src="getImage(site)")
         .panel__favorite(
-        @click="toggleFavorite(site)"
-        :class="favoriteStatus(site)"
+            @click="toggleFavorite(site)"
+            :class="favoriteStatus(site)"
         )
 </template>
 
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
-import axios from "axios";
 
 @Component
 export default class extends Vue {
+  /**
+   * 表示するサイトリスト
+   */
+  @Prop({ type: Array })
+  siteList: {}[];
+
   public isFavorite(id: number): boolean {
     const favoriteSitesIds = this.$store.state.user.user.favorite; //ここがデータ持つ
     return favoriteSitesIds.includes(id);
@@ -34,11 +39,6 @@ export default class extends Vue {
         : "favorite-icon__off";
     };
   }
-  /**
-   * 表示するサイトリスト
-   */
-  @Prop({ type: Array })
-  siteList: {}[];
   /**
    * 画像URLの作成
    */

@@ -1,10 +1,14 @@
+import axios from "axios";
+import { siteUrls } from "~/models/urls";
+
 export const state = () => ({
   list: []
 });
 
 export const actions = {
-  fetchCategories({ commit }, sites) {
-    commit("fetchCategories", sites);
+  async fetchCategories({ commit }) {
+    const response = await axios.get(siteUrls.category);
+    commit("fetchCategories", response.data.category);
   }
 };
 export const mutations = {

@@ -1,10 +1,14 @@
+import axios from "axios";
+import { siteUrls } from "~/models/urls";
+
 export const state = () => ({
   sites: []
 });
 
 export const actions = {
-  fetchSites({ commit }, sites) {
-    commit("fetchSites", sites.sites);
+  async fetchSites({ commit }) {
+    const response = await axios.get(siteUrls.sites);
+    commit("fetchSites", response.data.sites);
   },
   favorite({ commit }, site) {
     commit("favorite", site);
@@ -12,6 +16,9 @@ export const actions = {
 };
 
 export const getters = {
+  all: state => {
+    return state.sites;
+  },
   blog: state => {
     return state.sites.filter(site => {
       return site.category.includes(1);

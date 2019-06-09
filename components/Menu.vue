@@ -7,13 +7,8 @@
 
 <script lang="ts">
 import { Component, Vue } from "~/node_modules/vue-property-decorator";
-import axios from "axios";
 
-@Component({
-  components: {
-    SiteList: () => import("~/components/SiteList.vue")
-  }
-})
+@Component
 export default class extends Vue {
   // 一覧取得
   public get categories(): Object[] {
