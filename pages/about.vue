@@ -8,17 +8,16 @@
 import { Component, Vue } from "vue-property-decorator";
 import { getPageData } from "~/store/main";
 @Component({
-  layout: "left_column"
+  layout: "left_column",
+  async fetch({ store }) {
+    store.dispatch("main/changePage", getPageData("about"));
+  }
 })
 export default class extends Vue {
   /**
    * レイアウト
    */
   layout: string = "left_column";
-
-  public async fetch({ store }) {
-    store.dispatch("main/changePage", getPageData("about"));
-  }
 
   /**
    * テストデータ
