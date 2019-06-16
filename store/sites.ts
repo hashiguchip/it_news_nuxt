@@ -1,5 +1,6 @@
 import axios from "axios";
 import { siteUrls } from "~/models/urls";
+import * as json from "../functions/src/data.json";
 
 export const state = () => ({
   sites: []
@@ -7,8 +8,10 @@ export const state = () => ({
 
 export const actions = {
   async fetchSites({ commit }) {
-    const response = await axios.get(siteUrls.sites);
-    commit("fetchSites", response.data.sites);
+    // todo: firebase外部にアクセスできないようなので一旦jsonを直接読み込む形にしておく
+    // const response = await axios.get(siteUrls.sites);
+    // commit("fetchSites", response.data.sites);
+    commit("fetchSites", json.sites);
   },
   favorite({ commit }, site) {
     commit("favorite", site);
@@ -16,30 +19,30 @@ export const actions = {
 };
 
 export const getters = {
-  all: state => {
+  all(state) {
     return state.sites;
   },
-  blog: state => {
+  blog(state) {
     return state.sites.filter(site => {
       return site.category.includes(1);
     });
   },
-  gadget: state => {
+  gadget(state) {
     return state.sites.filter(site => {
       return site.category.includes(1);
     });
   },
-  joke: state => {
+  joke(state) {
     return state.sites.filter(site => {
       return site.category.includes(1);
     });
   },
-  news: state => {
+  news(state) {
     return state.sites.filter(site => {
       return site.category.includes(1);
     });
   },
-  programming: state => {
+  programming(state) {
     return state.sites.filter(site => {
       return site.category.includes(1);
     });

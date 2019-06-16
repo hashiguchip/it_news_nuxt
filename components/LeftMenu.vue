@@ -6,22 +6,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "~/node_modules/vue-property-decorator";
-import axios from "axios";
+import { Component, Vue } from "vue-property-decorator";
 
 @Component
 export default class extends Vue {
-  public async fetch({ store }) {
-    try {
-      const categories = await axios.get(process.env.baseUrlAPI + "/category");
-      store.dispatch("categories/fetchCategories", categories.data.category);
-    } catch (e) {
-      console.log(e);
-    }
-  }
   // 一覧取得
-  public get categories(): string {
-    return this.$store.state.categories.list;
+  public get categories(): Object[] {
+    return this.$store.getters["categories/getCategories"];
   }
 }
 </script>

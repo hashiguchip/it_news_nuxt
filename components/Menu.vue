@@ -6,14 +6,20 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "~/node_modules/vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
+import { Getter, namespace } from "vuex-class";
+ 
+const categories = namespace("categories");
 
 @Component
 export default class extends Vue {
-  // 一覧取得
   public get categories(): Object[] {
-    return this.$store.state.categories.list;
+    return this.$store.getters["categories/getCategories"];
   }
+  // 一覧取得
+  // public get categories(): Object[] {
+  //   return this.$store.getters["categories/categories"];
+  // }
 }
 </script>
 

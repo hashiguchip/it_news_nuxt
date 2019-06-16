@@ -55,7 +55,11 @@ export function getPageData(pageKey): IPage {
 }
 
 export const state = () => ({
-  page: {},
+  page: {
+    title: "",
+    description: "",
+    image: ""
+  },
   list: []
 });
 
@@ -80,5 +84,11 @@ export const mutations = {
   },
   toggle(state, todo) {
     todo.done = !todo.done;
+  }
+};
+
+export const getters = {
+  currentPage(state): IPage {
+    return state.page;
   }
 };

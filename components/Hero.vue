@@ -12,7 +12,7 @@ import { IPage } from "~/store/main";
 @Component
 export default class extends Vue {
   public get page(): IPage {
-    return this.$store.state.main.page;
+    return this.$store.getters["main/currentPage"];
   }
 }
 </script>

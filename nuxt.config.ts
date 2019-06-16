@@ -3,13 +3,14 @@ const config: NuxtConfiguration = {
   dev: process.env.NODE_ENV !== "production",
   env: {
     baseUrl: process.env.BASE_URL || "http://localhost:3000",
-    baseUrlAPI: process.env.BASE_URL || "https://it-news-b9a2d.firebaseapp.com"
+    //baseUrlAPI: process.env.BASE_URL || "https://it-news-b9a2d.firebaseapp.com"
+    baseUrlAPI: ""
   },
   mode: "universal",
-  buildDir: process.env.NODE_ENV === "production" ? "functions/.nuxt" : "functions/.nuxt",
+  // buildDir: process.env.NODE_ENV === "production" ? "functions/.nuxt" : "nuxt",
   // todo:firebase用
-  ssr: true,
-  ssrLog: true,
+  // ssr: process.env.NODE_ENV === "production",
+  // ssrLog: process.env.NODE_ENV === "production",
 
   /*
    ** Headers of the page
@@ -60,7 +61,7 @@ const config: NuxtConfiguration = {
    */
   build: {
     // todo:いい感じに本番とローカル分けたい
-    publicPath: "https://it-news-b9a2d.firebaseapp.com",
+    // publicPath: "https://it-news-b9a2d.firebaseapp.com",
     /*
      ** You can extend webpack config here
      */
