@@ -24,19 +24,22 @@
 </script>
 <style scoped lang="scss">
     .page-wrapper {
+        display: flex;
+        flex-direction: column;
         width: 100%;
         min-height: 100vh;
         &__header {
-            height: 70px;
+            flex-basis: 70px;
             background: #4153b8;
             box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
         }
         &__main {
+            flex-grow: 1;
             padding: 0 20px;
             min-height: 100px;
         }
         &__footer {
-            height: 170px;
+            flex-basis: 170px;
             background: #1a5220;
         }
     }
