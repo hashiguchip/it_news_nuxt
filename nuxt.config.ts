@@ -50,9 +50,9 @@ const config: NuxtConfiguration = {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    "~/plugins/vue-local-storage.ts",
-    "~/plugins/v-lazy-image.ts",
-    "~/plugins/filter/appFilter"
+    { src: "~/plugins/filter/appFilter" },
+    { src: "~/plugins/v-lazy-image.ts", ssr: false },
+    { src: "~/plugins/vue-local-storage.ts", ssr: false }
   ],
 
   /*
