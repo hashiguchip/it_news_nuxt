@@ -2,7 +2,7 @@
 .panels-block
     .panels-block__panel.panel(v-for="site in siteList")
         a.panel__text(:href="site.url" target="_blank") {{site.name}}
-        img.panel__image(:src="getImage(site)")
+        v-lazy-image.panel__image(:src="getImage(site)")
         .panel__favorite(
             @click="toggleFavorite(site)"
             :class="favoriteStatus(site)"
@@ -51,6 +51,11 @@ export default class extends Vue {
 </script>
 
 <style lang="sass" scoped>
+.v-lazy-image
+    filter: blur(10px)
+    transition: filter 0.3s
+.v-lazy-image-loaded
+    filter: blur(0)
 .main-contents
     position: relative
     margin: 10px 0px
