@@ -23,11 +23,6 @@ import { getPageData } from "~/store/main";
     } catch (e) {
       console.log(e);
     }
-    store.dispatch(
-      "user/updateFavorite",
-      {}
-      //JSON.parse(this.$localStorage.get("userData"))
-    );
   }
 })
 export default class extends Vue {

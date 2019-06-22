@@ -22,11 +22,6 @@ export default class ListMixin extends Vue {
         console.log(e);
       }
     }
-    this.$store.dispatch(
-      "user/updateFavorite",
-      {}
-      //JSON.parse(this.$localStorage.get("userData"))
-    );
   }
   public isFavorite(id: number): boolean {
     const favoriteSitesIds = this.$store.state.user.user.favorite; //ここがデータ持つ

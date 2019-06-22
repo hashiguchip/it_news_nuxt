@@ -24,21 +24,12 @@ import { getPageData } from "~/store/main";
     } catch (e) {
       console.log(e);
     }
-    store.dispatch(
-      "user/updateFavorite",
-      {}
-      //JSON.parse(this.$localStorage.get("userData"))
-    );
   }
 })
 export default class extends Vue {
   // 一覧取得
   public get sites(): Object[] {
     return this.$store.getters["sites/all"];
-  }
-
-  public mounted() {
-    // console.log("インデックスのmoutned");
   }
 }
 </script>
