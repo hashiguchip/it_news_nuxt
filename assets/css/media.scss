@@ -12,7 +12,7 @@ $breakpoints: (
 // return media query
 // ex )
 //@media screen and (max-width: 1200px) {}
-@mixin media_test($device) {
+@mixin media($device) {
   @if (map-has-key($breakpoints, $device)) {
     @media screen and (max-width: convertDeviceToSize($device)) {
       @content;

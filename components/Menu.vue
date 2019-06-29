@@ -8,7 +8,6 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { Getter, namespace } from "vuex-class";
- 
 const categories = namespace("categories");
 
 @Component
@@ -24,9 +23,12 @@ export default class extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/css/media.scss";
 .menus {
   display: flex;
-  &__item {
+  @include media("phone") {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr
   }
 }
 .menu {
