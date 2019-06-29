@@ -1,0 +1,23 @@
+// config
+$breakpoints: (
+  phone: 640px,
+  tablet: 768px,
+  desktop: 1024px
+) !default;
+
+@function convertDeviceToSize($deviceName) {
+  @return map-get($breakpoints, $deviceName);
+}
+
+// return media query
+// ex )
+//@media screen and (max-width: 1200px) {}
+@mixin media_test($device) {
+  @if (map-has-key($breakpoints, $device)) {
+    @media screen and (max-width: convertDeviceToSize($device)) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

@@ -51,6 +51,7 @@ export default class extends Vue {
 </script>
 
 <style lang="sass" scoped>
+@import '../assets/css/media.sass'
 .v-lazy-image
     filter: blur(10px)
     transition: filter 0.3s
@@ -67,6 +68,11 @@ export default class extends Vue {
     grid-row-gap: 10px
     justify-items: stretch
     align-items: stretch
+    @include media('phone')
+        grid-template-columns: 1fr 1fr
+        grid-auto-rows: 150px
+        grid-column-gap: 10px
+        grid-row-gap: 10px
     &__panel
         width: 100%
         height: 100%
