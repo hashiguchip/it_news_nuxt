@@ -46,7 +46,7 @@ const config: NuxtConfiguration = {
     "normalize.css/normalize.css",
     "~/assets/css/reset.css",
     "~/assets/css/font.sass",
-    "~/assets/css/main.css",
+    "~/assets/css/main.scss",
     "~/assets/css/variables/colors.sass"
   ],
 
