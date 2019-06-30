@@ -2,7 +2,7 @@
 .page-wrapper
     Header.page-wrapper__header
     Hero
-    .page-wrapper__main.main
+    .page-wrapper__main.main(v-touch:swipe="touchAction")
         LeftMenu.main__left
         nuxt.main__contents
     Footer.page-wrapper__footer
@@ -14,12 +14,42 @@ import Hero from "~/components/Hero.vue";
 import Header from "~/components/Header.vue";
 import Footer from "~/components/Footer.vue";
 import LeftMenu from "~/components/LeftMenu.vue";
+import { IPage } from "~/store/main";
 
 // const People = namespace(main.name);
 
 @Component({ components: { Header, Footer, Hero, LeftMenu } })
 export default class extends Vue {
-  public async mounted() {}
+  /**
+   * スワイプ ハンドリング
+   * @param direction
+   */
+  public touchAction(direction: string): void {
+    switch (direction) {
+      case "right":
+        this.nextPage();
+        return;
+      case "left":
+        this.previousPage();
+    }
+  }
+
+  /**
+   * 次のページに遷移させる
+   */
+  public nextPage(): void {
+    // 次のページ
+    const tmp: IPage = this.$store.getters["main/getNextPage"]();
+    this.$router.push({ path: tmp.key });
+  }
+  /**
+   * 前のページに遷移させる
+   */
+  public previousPage(): void {
+    // 次のページ
+    const tmp: IPage = this.$store.getters["main/getPreviousPage"]();
+    this.$router.push(tmp.key);
+  }
 }
 </script>
 <style scoped lang="scss">

@@ -18,6 +18,7 @@
     "nuxt": "^2.4.0",
     "ts-node": "^8.1.0",
     "vue-property-decorator": "^8.1.0",
+    "vue2-touch-events": "^2.0.0",
     "vuex-class": "^0.3.2",
     "webshot": "^0.18.0"
   },
