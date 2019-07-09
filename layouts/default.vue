@@ -1,9 +1,9 @@
 <template lang="pug">
-.page-wrapper
+.page-wrapper(v-touch:swipe="touchAction")
     Header.page-wrapper__header
     Hero
     Menu
-    .page-wrapper__main(v-touch:swipe="touchAction")
+    .page-wrapper__main
         nuxt
     Footer.page-wrapper__footer
 </template>

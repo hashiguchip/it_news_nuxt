@@ -1,8 +1,8 @@
 <template lang="pug">
-.page-wrapper
+.page-wrapper(v-touch:swipe="touchAction")
     Header.page-wrapper__header
     Hero
-    .page-wrapper__main.main(v-touch:swipe="touchAction")
+    .page-wrapper__main.main
         LeftMenu.main__left
         nuxt.main__contents
     Footer.page-wrapper__footer
