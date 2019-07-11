@@ -55,6 +55,7 @@ const config: NuxtConfiguration = {
    */
   plugins: [
     { src: "~/plugins/filter/appFilter" },
+    { src: "~/plugins/ga.ts", ssr: false },
     { src: "~/plugins/v-lazy-image.ts", ssr: false },
     { src: "~/plugins/vue-local-storage.ts", ssr: false },
     { src: "~/plugins/vue2-touch-events.ts", ssr: false }
